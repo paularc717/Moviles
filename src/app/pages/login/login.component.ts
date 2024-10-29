@@ -22,7 +22,7 @@ export class LoginComponent  implements OnInit {
       user: new FormControl('', Validators.required),
       pass: new FormControl('', Validators.required)
     })
-  }_
+  }
   
   login(data:IReqLogin){         
     console.log(data);
