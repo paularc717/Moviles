@@ -1,0 +1,61 @@
+<ion-header>  
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button auto-hide="false"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Registro</ion-title>
+  </ion-toolbar>
+</ion-header>  
+
+<ion-menu contentId="reg-content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Menu</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <ion-list>
+      <ion-button color="light" expand="full" routerLink="home" (click)="h()">Home</ion-button>
+      <ion-button color="light" expand="full" routerLink="login" (click)="log()">Login</ion-button>
+      <ion-button color="light" expand="full" routerLink="contacto" (click)="conta()">Contacto</ion-button>
+      <ion-button color="light" expand="full" routerLink="registro">Registro</ion-button>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+
+<ion-router-outlet id="reg-content"></ion-router-outlet>
+
+<ion-content>
+  <ion-card>
+
+<form [formGroup]="frmRegistro" (ngSubmit)="formulario(frmRegistro.value)">
+      
+  <ion-item>
+    <ion-label position="floating">Nombre</ion-label>
+    <ion-input type="text" formControlName="nombre"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Apellido</ion-label>
+    <ion-input type="text" formControlName="apellido"></ion-input>
+  </ion-item>
+  
+  <ion-item>
+    <ion-label position="floating">Correo Electrónico</ion-label>
+    <ion-input type="email" formControlName="email"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Contraseña</ion-label>
+    <ion-input type="password" formControlName="contrasena"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Direccion</ion-label>
+    <ion-input type="text" formControlName="direccion"></ion-input>
+  </ion-item>
+
+  <ion-button expand="full" type="ngSubmit">Registrar</ion-button>
+</form>
+</ion-card>
+</ion-content>
